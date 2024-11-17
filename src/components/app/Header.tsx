@@ -14,24 +14,30 @@ const HeaderVariants = cva("", {
 			primary: "bg-primary-default",
 			secondary: "bg-secondary-default",
 			transparent: "bg-transparent",
-			tertiary: "bg-tertiary-default",
+			tertiary: "bg-tertiary-light",
 		},
 		styles: {
 			default: "w-full h-16 border-dark flex justify-between items-center px-6",
+		},
+		border: {
+			default: "",
+			"2-black": "border-black border-2",
+			"b-2-black": "border-black border-b-2",
 		},
 	},
 	defaultVariants: {
 		variant: "default",
 		styles: "default",
+		border: "default",
 	},
 });
 
-const Header = ({ variant, className, styles, ...props }: HeaderProps) => {
+const Header = ({ variant, className, styles, border, ...props }: HeaderProps) => {
 	const { lastPage, atualPage } = useNavigationStore();
 	const { atualPage: page } = usePageStore();
 
 	return (
-		<header className={HeaderVariants({ variant, className, styles })} {...props}>
+		<header className={HeaderVariants({ variant, border, className, styles })} {...props}>
 			{atualPage === "/" ? (
 				<Link to="/">
 					<HomeIcon size="2xl" className="cursor-pointer" />
