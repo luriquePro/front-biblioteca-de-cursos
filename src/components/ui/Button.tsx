@@ -23,7 +23,7 @@ const ButtonVariants = cva("", {
 			lg: "rounded-lg",
 		},
 		size: {
-			large: "w-96 h-16",
+			large: "w-80 h-14 xs:w-96 xs:h-16",
 		},
 		family: {
 			roboto: "font-roboto",

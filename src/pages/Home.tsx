@@ -11,7 +11,7 @@ const Home = () => {
 
 	return (
 		<div className="flex-grow realative">
-			<img src="/bibliotecaCursosLogo.png" alt="" className="mt-24 mx-auto w-96 h-96 bg-tertiary-light rounded-full" />
+			<img src="/bibliotecaCursosLogo.png" alt="" className="mt-24 mx-auto w-80 h-80 xs:w-96 xs:h-96 bg-tertiary-light rounded-full" />
 			<div className="absolute bottom-0 w-full py-14">
 				<div className="flex flex-col justify-center items-center space-y-8 ">
 					<Button variant="primary-solid" redirectTo="/auth/login">

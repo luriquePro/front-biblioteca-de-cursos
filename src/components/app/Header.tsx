@@ -45,14 +45,14 @@ const Header = ({ variant, className, styles, border, ...props }: HeaderProps) =
 				</Link>
 			) : (
 				<Link to={lastPage!}>
-					<BackArrowIcon size="2xl" fill="#fff" />
+					<BackArrowIcon size="2xl" fill="transparent" />
 				</Link>
 			)}
 
 			{page && <span className="text-black font-bold text-lg uppercase">{page}</span>}
 
 			<Link to="/settings">
-				<SettingsIcon size="2xl" className="cursor-pointer" />
+				<SettingsIcon size="2xl" className="cursor-pointer" fill="#000" stroke="#000" />
 			</Link>
 		</header>
 	);
