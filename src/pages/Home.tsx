@@ -11,14 +11,14 @@ const Home = () => {
 
 	return (
 		<div className="flex-grow realative">
-			<img src="/bibliotecaCursosLogo.png" alt="" className="mt-24 w-full h-96" />
-			<div className="absolute bottom-8 w-full">
-				<div className="flex flex-col justify-center items-center space-y-4 ">
+			<img src="/bibliotecaCursosLogo.png" alt="" className="mt-24 mx-auto w-96 h-96 bg-tertiary-light rounded-full" />
+			<div className="absolute bottom-0 w-full py-14">
+				<div className="flex flex-col justify-center items-center space-y-8 ">
 					<Button variant="primary-solid" redirectTo="/auth/login">
 						Entrar
 					</Button>
 
-					<Button variant="transparent-bord" redirectTo="/auth/register">
+					<Button variant="white-bord" redirectTo="/auth/register">
 						Cadastrar
 					</Button>
 				</div>
