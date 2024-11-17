@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigationStore } from "../../store/navigationStore";
 import { usePageStore } from "../../store/pageStore";
 import { HomeIcon, SettingsIcon } from "../icons";
+import { BackArrowIcon } from "../icons/BackArrowIcon";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLHeadingElement>, VariantProps<typeof HeaderVariants> {}
 
@@ -43,7 +44,9 @@ const Header = ({ variant, className, styles, border, ...props }: HeaderProps) =
 					<HomeIcon size="2xl" className="cursor-pointer" />
 				</Link>
 			) : (
-				<Link to={lastPage!}>Voltar</Link>
+				<Link to={lastPage!}>
+					<BackArrowIcon size="2xl" fill="#fff" />
+				</Link>
 			)}
 
 			{page && <span className="text-black font-bold text-lg uppercase">{page}</span>}
