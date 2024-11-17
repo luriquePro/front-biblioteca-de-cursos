@@ -12,6 +12,7 @@ const ButtonVariants = cva("", {
 			primary: "text-primary-default bg-transparent border-2 border-primary-default hover:bg-primary-default hover:text-white",
 			"primary-solid": "text-white bg-primary-default border-2 border-primary-default hover:bg-primary-700 hover:border-primary-700",
 			"transparent-bord": "text-dark bg-transparent border-2 border-black hover:bg-black hover:text-white",
+			"white-bord": "text-dark bg-white border-2 border-black hover:bg-black hover:text-white",
 		},
 		text: {
 			bold: "font-bold",
@@ -22,7 +23,13 @@ const ButtonVariants = cva("", {
 			lg: "rounded-lg",
 		},
 		size: {
-			large: "w-80 h-14",
+			large: "w-96 h-16",
+		},
+		family: {
+			roboto: "font-roboto",
+			"open-sans": "font-open-sans",
+			"sans-serif": "font-sans",
+			serif: "font-serif",
 		},
 	},
 	defaultVariants: {
@@ -30,14 +37,15 @@ const ButtonVariants = cva("", {
 		size: "large",
 		rounded: "lg",
 		text: "bold",
+		family: "sans-serif",
 	},
 });
 
-const Button = ({ variant, text, rounded, size, className, children, redirectTo, ...props }: ButtonProps) => {
+const Button = ({ variant, text, rounded, size, className, children, redirectTo, family, ...props }: ButtonProps) => {
 	if (redirectTo) {
 		return (
 			<Link to={redirectTo}>
-				<button type="button" className={ButtonVariants({ variant, text, rounded, size, className })} {...props}>
+				<button type="button" className={ButtonVariants({ variant, text, rounded, size, family, className })} {...props}>
 					{children}
 				</button>
 			</Link>
@@ -45,7 +53,7 @@ const Button = ({ variant, text, rounded, size, className, children, redirectTo,
 	}
 
 	return (
-		<button type="button" className={ButtonVariants({ variant, text, rounded, size, className })} {...props}>
+		<button type="button" className={ButtonVariants({ variant, text, rounded, size, family, className })} {...props}>
 			{children}
 		</button>
 	);
